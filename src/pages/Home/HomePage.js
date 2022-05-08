@@ -1,4 +1,4 @@
-import { SearchBar, Map } from '@src/components';
+import { Dashboard, SearchBar, Map } from '@src/components';
 import { useMap } from '@src/hooks';
 
 const HomePage = () => {
@@ -8,6 +8,7 @@ const HomePage = () => {
       {isLoaded && (
         <>
           <SearchBar />
+          <Dashboard />
           <Map />
         </>
       )}

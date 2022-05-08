@@ -8,8 +8,8 @@ const theme = {
   colors: {
     athensGray: '#F5F6F8',
     black: '#000000',
-    white: '#FFFFFF',
     salmon: '#FF7575',
+    white: '#FFFFFF',
   },
 };
 

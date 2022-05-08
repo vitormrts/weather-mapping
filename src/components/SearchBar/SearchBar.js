@@ -1,5 +1,5 @@
 import { Autocomplete } from '@react-google-maps/api';
-import { useCities } from '@src/hooks';
+import { useCities, useMap } from '@src/hooks';
 import { IconSearch } from '@src/icons';
 import { getFormattedCity } from '@src/utils';
 import { useRef } from 'react';
@@ -8,12 +8,14 @@ import * as S from './SearchBar.style';
 const SearchBar = () => {
   const ref = useRef();
   const { cities, setCities } = useCities();
+  const { map } = useMap();
 
   const handleOnClick = () => {
     const { value } = ref.current;
     if (value) {
       (async () => {
         const city = await getFormattedCity(value);
+        map.setCenter({ lat: city.lat, lng: city.lng });
         setCities([...cities, city]);
       })();
       ref.current.value = '';

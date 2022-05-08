@@ -19,6 +19,10 @@ export const Wrapper = styled.div`
   .input-wrapper {
     width: 100%;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.sm}px) {
+    max-width: 90%;
+    top: 70px;
+  }
 `;
 
 export const Input = styled.input`
