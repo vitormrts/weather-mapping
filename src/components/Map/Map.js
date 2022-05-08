@@ -10,7 +10,7 @@ const center = {
 
 const Map = () => {
   const { cities } = useCities();
-  const { map, setMap } = useMap();
+  const { setMap } = useMap();
 
   const onLoad = useCallback((mapRef) => {
     const bounds = new window.google.maps.LatLngBounds(center);
